@@ -18,20 +18,22 @@ const HomePage = () => {
 
   return (
     <main>
-      <h3>
+      <h2>
         <u>Meet Our Staff</u>
-      </h3>
+      </h2>
       <section className="staff-card">
         {staffInfo.map((staff, i) => {
           return (
             <section className="staff-info">
               <div className="staff-name">
-                <p key={i}>
+                <h3 key={i}>
                   {staff.firstName} {staff.lastName}
-                </p>
+                </h3>
               </div>
               <div className="staff-title">
-                <p>{staff.jobTitle}</p>
+                <p>
+                  <u>{staff.jobTitle}</u>
+                </p>
               </div>
             </section>
           )

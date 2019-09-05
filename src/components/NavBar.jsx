@@ -1,11 +1,11 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
     <section className="top-container">
       <header>
-        <h1>Company Name</h1>
+        <h1>Unique Orns</h1>
       </header>
       <nav className="nav-bar">
         <h4 className="nav-link">
