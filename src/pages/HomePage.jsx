@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Axios from 'axios'
 
 const HomePage = () => {
@@ -9,7 +10,7 @@ const HomePage = () => {
       'https://sdg-staff-directory-app.herokuapp.com/api/Unique%20Orns/Employees'
     )
     setStaffInfo(resp.data)
-    console.log(resp.data)
+    console.log(resp.data, 'Staff')
   }
 
   useEffect(() => {
@@ -24,11 +25,13 @@ const HomePage = () => {
       <section className="staff-card">
         {staffInfo.map((staff, i) => {
           return (
-            <section className="staff-info">
+            <section key={i} className="staff-info">
               <div className="staff-name">
-                <h3 key={i}>
-                  {staff.firstName} {staff.lastName}
-                </h3>
+                <Link to={{ pathname: `/employee/${staff.id}` }}>
+                  <h3>
+                    {staff.firstName} {staff.lastName}
+                  </h3>
+                </Link>
               </div>
               <div className="staff-title">
                 <p>

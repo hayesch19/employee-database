@@ -12,7 +12,7 @@ const NavBar = () => {
           <Link to="/">Home</Link>
         </h4>
         <h4 className="nav-link">
-          <Link to="add_employee">Add Employee</Link>
+          <Link to="add_employee">Add Staff Member</Link>
         </h4>
       </nav>
     </section>
