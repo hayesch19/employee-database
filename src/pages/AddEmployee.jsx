@@ -8,7 +8,8 @@ const AddEmployee = () => {
     jobTitle: ''
   })
 
-  const addNewEmployee = async => {
+  const addNewEmployee = async e => {
+    e.preventDefault()
     const resp = Axios.post(
       'https://sdg-staff-directory-app.herokuapp.com/api/Unique%20Orns/Employees',
       { person }
@@ -31,19 +32,19 @@ const AddEmployee = () => {
             placeholder="First"
             type="text"
             id="firstName"
-            onChange={updateInput}
+            onSubmit={updateInput}
           ></input>
           <input
             placeholder="Last"
             type="text"
             id="lastName"
-            onChange={updateInput}
+            onSubmit={updateInput}
           ></input>
           <input
             placeholder="Job Title"
             type="text"
             id="jobTitle"
-            onChange={updateInput}
+            onSubmit={updateInput}
           ></input>
 
           <button type="submit">Add Team Member</button>
