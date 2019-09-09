@@ -10,15 +10,13 @@ const EmployeeProfile = props => {
       `https://sdg-staff-directory-app.herokuapp.com/api/Unique%20Orns/employees/${employeeId}`
     )
     setProfile(resp.data)
-    console.log({ data: resp.data })
+    console.log({ data: resp.data }, 'Profile')
   }
   useEffect(() => {
     fetchProfData()
   }, [employeeId])
 
   useEffect(() => {
-    console.log(props)
-    console.log(props.match.params.employeeId)
     setEmployeeId(props.match.params.employeeId)
   }, [props])
 

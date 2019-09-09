@@ -84,4 +84,10 @@ footer {
   padding: 0.5rem;
   font-size: 1.2rem;
   text-align: center;
+  color: #5e6073;
+}
+
+.add-staff-area {
+  display: flex;
+  justify-content: center;
 }

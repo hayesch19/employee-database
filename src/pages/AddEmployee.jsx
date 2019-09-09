@@ -1,19 +1,58 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import Axios from 'axios'
 
 const AddEmployee = () => {
-  // const [firstName, setFirstName] = useState('')
+  const [person, setPerson] = useState({
+    firstName: '',
+    lastName: '',
+    jobTitle: ''
+  })
 
-  // Marks Challenge
-  //  const [person, setPerson] = useState({})
+  const addNewEmployee = async => {
+    const resp = Axios.post(
+      'https://sdg-staff-directory-app.herokuapp.com/api/Unique%20Orns/Employees',
+      { person }
+    )
+  }
+  useEffect(() => {
+    addNewEmployee()
+  }, [])
+
+  const updateInput = e => {
+    setPerson({
+      ...person,
+      [e.target.id]: e.target.value
+    })
+  }
 
   return (
     <main>
-      <h3>Add A Staff Member</h3>
+      <h2>Add A Staff Member</h2>
       <section className="add-staff-area">
-        <input placeholder="First" type="text"></input>
-        <input placeholder="Last" type="text"></input>
-        <input placeholder="Job Title" type="text"></input>
-        <button>Add Team Member</button>
+        <form action="" onSubmit={addNewEmployee}>
+          <input
+            placeholder="First"
+            type="text"
+            id="firstName"
+            onChange={updateInput}
+          ></input>
+          <input
+            placeholder="Last"
+            type="text"
+            id="lastName"
+            onChange={updateInput}
+          ></input>
+          <input
+            placeholder="Job Title"
+            type="text"
+            id="jobTitle"
+            onChange={updateInput}
+          ></input>
+
+          <button type="submit" name="action">
+            Add Team Member
+          </button>
+        </form>
       </section>
     </main>
   )
