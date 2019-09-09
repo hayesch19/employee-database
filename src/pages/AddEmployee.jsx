@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Axios from 'axios'
 
 const AddEmployee = () => {
@@ -14,9 +14,6 @@ const AddEmployee = () => {
       { person }
     )
   }
-  useEffect(() => {
-    addNewEmployee()
-  }, [])
 
   const updateInput = e => {
     setPerson({
@@ -49,9 +46,7 @@ const AddEmployee = () => {
             onChange={updateInput}
           ></input>
 
-          <button type="submit" name="action">
-            Add Team Member
-          </button>
+          <button type="submit">Add Team Member</button>
         </form>
       </section>
     </main>
